@@ -447,6 +447,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:32px 5%;
   /* hero */
   .h-btns{flex-direction:column}
   .btn{width:100%;justify-content:center}
+  .hero-scroll{display:none}
   /* wrap */
   .wrap{padding:68px 5%}
   /* about */
@@ -978,8 +979,12 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:32px 5%;
 /* theme toggle */
 const html=document.documentElement;
 const tt=document.getElementById('themeToggle');
-// Default: light. Persist preference.
-if(localStorage.getItem('theme')==='light'){html.classList.add('dark');}
+// v2: dark is default — clear any stale 'light' preference from old deploys
+if(!localStorage.getItem('theme_v2')){
+  localStorage.removeItem('theme');
+  localStorage.setItem('theme_v2','1');
+}
+if(localStorage.getItem('theme')!=='light'){html.classList.add('dark');}
 tt.addEventListener('click',()=>{
   html.classList.toggle('dark');
   localStorage.setItem('theme', html.classList.contains('dark')?'dark':'light');
