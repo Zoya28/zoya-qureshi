@@ -978,7 +978,7 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:32px 5%;
 /* theme toggle */
 const html=document.documentElement;
 const tt=document.getElementById('themeToggle');
-// Default: light. Persist preference.
+// Default: dark. Persist preference.
 if(localStorage.getItem('theme')==='light'){html.classList.add('dark');}
 tt.addEventListener('click',()=>{
   html.classList.toggle('dark');
