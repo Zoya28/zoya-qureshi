@@ -973,7 +973,17 @@ footer{background:var(--bg3);border-top:1px solid var(--border);padding:32px 5%;
   </div>
 </div>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
+/* theme toggle */
+const html=document.documentElement;
+const tt=document.getElementById('themeToggle');
+// Default: light. Persist preference.
+if(localStorage.getItem('theme')==='dark'){html.classList.add('dark');}
+tt.addEventListener('click',()=>{
+  html.classList.toggle('dark');
+  localStorage.setItem('theme', html.classList.contains('dark')?'dark':'light');
+});
 const PD=[
   {title:"YouTube Script Writer",type:"AI / Content Generation · Featured",desc:"An advanced AI-powered content generation tool that transforms simple topics or keywords into comprehensive, production-ready YouTube video scripts. Built with cutting-edge language models through Groq API, this application streamlines the content creation process for video creators, marketers, and educators.",feats:["Instant script generation from simple topic input","Customizable video length (short-form, medium, long-form)","Adjustable creativity levels for tone and style","Structured output with intro, body, and conclusion","Natural language processing for engaging narratives","Real-time preview and editing capabilities","Export options in multiple formats"],stack:["Python","Groq API","LangChain","Streamlit","FastAPI"],live:"https://youtube-script-writer.onrender.com",gh:"#"},
   {title:"AI Email Generator",type:"AI / Productivity",desc:"Context-aware email generator with tone adjustment and purpose-specific drafts. Automatically enhances grammar and structure for professional outputs — so every email sounds like you wrote it on a good day.",feats:["Tone adjustment for professional, casual, or friendly emails","Purpose-specific draft generation","Grammar and structure enhancement","Quick preview and send options"],stack:["Python","LLM","Prompt Engineering","FastAPI"],live:"https://email-generator-rqms.onrender.com",gh:"#"},
