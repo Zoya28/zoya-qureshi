@@ -1,7 +1,7 @@
 # Zoya Qureshi — Portfolio
 
 > Personal portfolio website for **Zoya Qureshi**, AI Engineer & Developer.  
-> Live at → [zq-portfolio.vercel.app](https://zq-portfolio.vercel.app)
+> Live at → [zq-portfolio.vercel.app](https://zoya-qureshi.vercel.app)
 
 ---
 
